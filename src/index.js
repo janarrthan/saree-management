@@ -68,51 +68,20 @@ app.use(dServiceRouter);
 // createAccount();
 
 
-// const {google} = require("googleapis");
-// const fs = require("fs");
+const drive = require("./utils/google-drive.js");
 
-// const clientId = "***REMOVED***";
-// const clientSecret = "***REMOVED***";
-// const redirectURI = "https://developers.google.com/oauthplayground";
+const test = async () => {
+    const fileId = "19ctxw5WOdnptzYLlAHNk_ZsoKjfEvbxz";
+    const newDestination = "11w0_oB1Gy838fEJfGEnlGtDXTzHcgobz";
+    const oldDestination = "10ei5Anz6vy1C03rd2KdG4QUVxzRvbxIk";
 
-// const refreshToken = "***REMOVED***";
+    const result = await drive.copyFile(fileId, oldDestination, newDestination);
+    console.log(result);
+}
 
-// const oauth2Client = new google.auth.OAuth2(
-//     clientId,
-//     clientSecret,
-//     redirectURI
-// );
-
-// oauth2Client.setCredentials({refresh_token: refreshToken});
-
-// const drive = google.drive({
-//     version: "v3",
-//     auth: oauth2Client
-// });
-
-// const filePath = path.join(__dirname, "../public/uploads/test.jpg");
-
-// const uploadFile = async () => {
-//     try{
-//         const response = await drive.files.create({
-//             requestBody:{
-//                 name: "sample.jpg",
-//                 mimeType: "image/jpg"
-//             },
-//             media:{
-//                 mimeType: "image/jpg",
-//                 body: fs.createReadStream(filePath)
-//             }
-//         });
-
-//         console.log(response);
-//     }catch(e){
-//         console.log(e.message);
-//     }
-// }
-
-// uploadFile();
+// test();
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+

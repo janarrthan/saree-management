@@ -10,7 +10,7 @@ $(document).ready(() => {
         },
         "columns": [
             { "data": function(product){
-                return `<img class="product-image" src="/uploads/orders/${product.imagePath}">`;
+                return `<img class="product-image" src="${generateImageSrc({id:product.imagePath})}">`;
             }, "width": "5%"},
             { "data": "prodId" },
             { "data": "name" },
