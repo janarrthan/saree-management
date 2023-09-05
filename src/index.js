@@ -57,8 +57,8 @@ app.use(dServiceRouter);
 // const User = require("./models/user.js");
 // const createAccount = async () => {
 //     const user = new User({
-//         name: "Janarrthan",
-//         email: "jeevananthanjana@gmail.com",
+//         name: "Jeenathan",
+//         email: "tjhousefashion@gmail.com",
 //         password: "***REMOVED***",
 //         role: permissions.roles.ADMIN,
 //     });
@@ -71,4 +71,3 @@ app.use(dServiceRouter);
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
-
