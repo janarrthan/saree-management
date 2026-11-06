@@ -57,9 +57,9 @@ app.use(dServiceRouter);
 // const User = require("./models/user.js");
 // const createAccount = async () => {
 //     const user = new User({
-//         name: "Jeenathan",
-//         email: "tjhousefashion@gmail.com",
-//         password: "***REMOVED***",
+//         name: process.env.ADMIN_NAME,
+//         email: process.env.ADMIN_EMAIL,
+//         password: process.env.ADMIN_PASSWORD,
 //         role: permissions.roles.ADMIN,
 //     });
 

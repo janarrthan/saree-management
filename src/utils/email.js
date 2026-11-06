@@ -3,16 +3,16 @@ const { createTransport } = require('nodemailer');
 const sendMail = (data) => {
     try{
         const transporter = createTransport({
-            host: "smtp-relay.brevo.com",
-            port: 587,
+            host: process.env.SMTP_HOST,
+            port: Number(process.env.SMTP_PORT),
             auth: {
-                user: "fashionsjshop@gmail.com",
+                user: process.env.SMTP_USER,
                 pass: process.env.BREVO_API_KEY,
             },
         });
-    
+
         const mailOptions = {
-            from: 'fashionsjshop@gmail.com',
+            from: process.env.MAIL_FROM,
             to: data.email,
             subject: data.subject,
             text: data.message
